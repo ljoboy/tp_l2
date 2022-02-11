@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Formulaire de connexion</h1>
-<form action="controllers/login.php" method="post">
+<form action="../Controllers/login.php" method="post">
     Email : <input type="email" name="email"><br/>
     Mot de passe : <input type="password" name="password"><br>
     <input type="submit" value="Se connecter">
