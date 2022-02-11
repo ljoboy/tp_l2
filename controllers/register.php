@@ -15,9 +15,9 @@ $adresse = $_POST['adresse'];
 
 $db = db_connect();
 
-$db->prepare("INSERT INTO esis_db.etudiant(nom, postnom, prenom, genre, matricule, promotion, adresse, telephone, password, email) VALUES (:nom, :postnom, :prenom, :genre, :matricule, :promotion, :adresse, :telephone, :password, :email)");
+$q = $db->prepare("INSERT INTO esis_db.etudiant(nom, postnom, prenom, genre, matricule, promotion, adresse, telephone, password, email) VALUES (:nom, :postnom, :prenom, :genre, :matricule, :promotion, :adresse, :telephone, :password, :email)");
 
-$db->exec([
+$q->execute([
               'nom' => $nom,
               'postnom' => $postnom,
               'prenom' => $prenom,
