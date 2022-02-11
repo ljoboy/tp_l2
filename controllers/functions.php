@@ -15,13 +15,13 @@ function db_connect() {
 }
 
 function is_connected() {
-    if (isset($_SESSION['auth'])) {
-        header('Location: /');
+    if (!isset($_SESSION['auth'])) {
+        header('Location: /login.php');
     }
 }
 
 function isnot_connected() {
     if (!isset($_SESSION['auth'])) {
-        header('Location: /login.php');
+        header('Location: /');
     }
 }
