@@ -10,13 +10,12 @@ function db_connect() {
         echo $e->getMessage();
         die();
     }
-
     return $db;
 }
 
 function is_connected() {
     if (!isset($_SESSION['auth'])) {
-        header('Location: /login.php');
+        header('Location: ../login.php');
     }
 }
 

@@ -18,26 +18,31 @@ if(
     $password = $_POST['password'];
     $password2 = $_POST['password2'];
     $adresse = $_POST['adresse'];
-
-    $q = $db->prepare(
-        "INSERT INTO esis.etudiant(nom, postnom, prenom, genre, matricule, promotion, adresse, telephone, password, email)
+    if ($password == $password2){
+        $q = $db->prepare(
+            "INSERT INTO esis.etudiant(nom, postnom, prenom, genre, matricule, promotion, adresse, telephone, password, email)
         VALUES (:nom, :postnom, :prenom, :genre, :matricule, :promotion, :adresse, :telephone, :password, :email)"
-    );
+        );
 
-    $q->execute([
-        'nom' => $nom,
-        'postnom' => $postnom,
-        'prenom' => $prenom,
-        'genre' => $genre,
-        'matricule' => $matricule,
-        'promotion' => $promotion,
-        'adresse' => $adresse,
-        'telephone' => $telephone,
-        'password' => $password,
-        'email' => $email
-    ]);
-    header('Location: ../index.php');
-    $q->closeCursor();
+        $q->execute([
+            'nom' => $nom,
+            'postnom' => $postnom,
+            'prenom' => $prenom,
+            'genre' => $genre,
+            'matricule' => $matricule,
+            'promotion' => $promotion,
+            'adresse' => $adresse,
+            'telephone' => $telephone,
+            'password' => $password,
+            'email' => $email
+        ]);
+        header('Location: ../index.php');
+        $q->closeCursor();
+    }else{
+        header('../register.php');
+        echo 'Vous devez tapez le meme mot de passe dans les champs prévus à cet effet';
+    }
+
 }else{
     header('Location: ../register.php');
     echo 'Veuillez remplir tous les champs';
