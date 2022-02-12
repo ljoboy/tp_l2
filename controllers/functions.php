@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 function db_connect() {
     try {
-        $db = new PDO('mysql:dbname=esis;host=localhost', 'root', 'toor');
+        $db = new PDO('mysql:dbname=esis;host=localhost', 'root', '');
     } catch (PDOException $e) {
         echo $e->getMessage();
         die();
