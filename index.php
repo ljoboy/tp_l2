@@ -1,5 +1,4 @@
 <?php
-
 require 'controllers/functions.php';
 is_connected();
 ?>

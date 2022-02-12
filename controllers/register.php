@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'functions.php';
 $db = db_connect();
 
@@ -37,13 +38,25 @@ if(
             'email' => $email
         ]);
         header('Location: ../index.php');
+        $_SESSION['auth'] = [
+            'nom' => $_POST['nom'],
+            'postnom' => $_POST['postnom'],
+            'prenom' => $_POST['prenom'],
+            'genre' => $_POST['genre'],
+            'matricule' => $_POST['matricule'],
+            'promotion' => $_POST['promotion'],
+            'telephone' => $_POST['phone'],
+            'adresse' => $_POST['adresse'],
+            'email' => $_POST['email'],
+            'password' => $_POST['password']
+        ];
         $q->closeCursor();
     }else{
-        header('../register.php');
+        include_once('../register.php');
         echo 'Vous devez tapez le meme mot de passe dans les champs prévus à cet effet';
     }
 
 }else{
-    header('Location: ../register.php');
+    include_once('../register.php');
     echo 'Veuillez remplir tous les champs';
 }
