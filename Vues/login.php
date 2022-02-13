@@ -22,7 +22,7 @@
             <label for="email">Email</label>
             <div class="extra">
                 <input type="email" id="email" name="email" value="<?php print_prevous_value('email'); ?>"><br/>
-                <?php check_email(); print_error_msg('email','login');?>
+                <?php check_email(); print_error_msg('email', 'login');?>
             </div>
         </div>
 

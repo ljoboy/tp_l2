@@ -46,7 +46,11 @@
             <label for="matricule">Matricule</label>
             <div class="extra">
                 <input type="text" name="matricule" id="matricule" value="<?php print_prevous_value('matricule'); ?>" placeholder="votre matricule"><br>
-                <?php print_error_msg('matricule', 'register'); if (array_key_exists('matricule_already_registered', $_SESSION)) echo $_SESSION['matricule_already_registered']; else echo "";?>
+                <?php print_error_msg('matricule', 'register'); if (array_key_exists('matricule_already_registered', $_SESSION)) {
+    echo $_SESSION['matricule_already_registered'];
+} else {
+    echo "";
+}?>
             </div>
         </div>
 
@@ -54,7 +58,11 @@
             <label for="email">Email</label>
             <div class="extra">
                 <input type="email" name="email" id="email" value="<?php print_prevous_value('email'); ?>" placeholder="votre adresse mail"><br>
-                <?php print_error_msg('email', 'register'); if (array_key_exists('email_already_registered', $_SESSION)) echo $_SESSION['email_already_registered']; else echo "";?>
+                <?php print_error_msg('email', 'register'); if (array_key_exists('email_already_registered', $_SESSION)) {
+    echo $_SESSION['email_already_registered'];
+} else {
+    echo "";
+}?>
             </div>
         </div>
 
@@ -62,7 +70,11 @@
             <label for="phone">Téléphone</label>
             <div class="extra">
                 <input type="tel" name="phone" id="phone" value="<?php print_prevous_value('phone'); ?>" placeholder="votre numéro de téléphone"><br>
-                <?php print_error_msg('phone', 'register'); if (array_key_exists('tel_already_registered', $_SESSION)) echo $_SESSION['tel_already_registered']; else echo "";?>
+                <?php print_error_msg('phone', 'register'); if (array_key_exists('tel_already_registered', $_SESSION)) {
+    echo $_SESSION['tel_already_registered'];
+} else {
+    echo "";
+}?>
             </div>
         </div>
 
@@ -78,7 +90,11 @@
             <label for="password2">Confirmer le mot de passe</label>
             <div class="extra">
                 <input type="password" name="password2" id="password2" value="<?php print_prevous_value('password2'); ?>" placeholder="votre mot de passe"><br>
-                <?php print_error_msg('password2', 'register'); if (array_key_exists('msg_invalid_password', $_SESSION)) echo $_SESSION['msg_invalid_password']; else echo "";?>
+                <?php print_error_msg('password2', 'register'); if (array_key_exists('msg_invalid_password', $_SESSION)) {
+    echo $_SESSION['msg_invalid_password'];
+} else {
+    echo "";
+}?>
             </div>
         </div>
 

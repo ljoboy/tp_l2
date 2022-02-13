@@ -1,4 +1,5 @@
 <?php
+
 require 'functions.php';
 require '../Models/Etudiant.php';
 
@@ -50,21 +51,22 @@ if (preg_match("/^$pattern_email@esisalama\.org$/", $email) === 0) {
 }
 
 //On vérifie si le matricule présent dans l'adresse mail correspond au matricule entré par l'étudiant
-if (substr($email, 0, 7) !== strtolower($matricule))
+if (substr($email, 0, 7) !== strtolower($matricule)) {
     $_SESSION['no_correspondance,matricule'] = "<span class='error'>Le matricule présent dans l'adresse doit correspondre au matricule entré</span><br>";
+}
 
 //Si l'adresse email est déjà enregistré avec un autre étudiant
-data_already_registered( 'email', $email, 'etudiant');
+data_already_registered('email', $email, 'etudiant');
 data_already_registered('matricule', $matricule, 'etudiant');
 data_already_registered('telephone', $telephone, 'etudiant');
 
 if (
-    array_key_exists('email_already_registered',$_SESSION) OR
-    array_key_exists('tel_already_registered',$_SESSION) OR
-    array_key_exists('matricule_already_registered',$_SESSION) OR
-    array_key_exists('incorrect_number', $_SESSION) OR
-    array_key_exists('incorrect_matricule', $_SESSION) OR
-    array_key_exists('incorrect_email', $_SESSION) OR
+    array_key_exists('email_already_registered', $_SESSION) or
+    array_key_exists('tel_already_registered', $_SESSION) or
+    array_key_exists('matricule_already_registered', $_SESSION) or
+    array_key_exists('incorrect_number', $_SESSION) or
+    array_key_exists('incorrect_matricule', $_SESSION) or
+    array_key_exists('incorrect_email', $_SESSION) or
     array_key_exists('no_correspondance,matricule', $_SESSION)
 ) {
     header('Location: ../Vues/register.php');
