@@ -10,10 +10,11 @@
 <body>
 <h1>Formulaire de connexion</h1>
 <form action="controllers/login.php" method="post">
-    Email : <input type="email" name="email"><br/>
-    Mot de passe : <input type="password" name="password"><br>
+    Email : <input type="email" name="email"><br/><br>
+    Mot de passe : <input type="password" name="password"><br><br>
     <input type="submit" value="Se connecter">
-</form>
+    <input type="hidden" name="page_from" value="login">
+</form><br>
 <a href="register.php">S'enregistrer</a>
 </body>
 </html>
