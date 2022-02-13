@@ -80,7 +80,7 @@ print_r($_SESSION);
 echo '</pre>';
 //Insertion des données dans la base de données
 $req = $db->prepare("
-    INSERT INTO esis_db.etudiant(nom, postnom, prenom, genre, matricule, promotion, email, telephone, adresse, password) 
+    INSERT INTO esis_db.etudiant(nom, postnom, prenom, genre, matricule, promotion, email, telephone, adresse, password)
     VALUES (:nom, :postnom, :prenom, :genre, :matricule, :promotion, :email, :telephone, :adresse, :password)
 ");
 
