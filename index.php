@@ -23,5 +23,6 @@ is_connected();
     <p>Telephone : <?php echo $_SESSION['auth']['telephone']; ?></p>
     <p>Password : <?php echo $_SESSION['auth']['password']; ?></p>
     <p>Adresse : <?php echo $_SESSION['auth']['adresse']; ?></p>
+    <p><a href="login.php"></a></p>
 </body>
 </html>

@@ -33,4 +33,5 @@ if (!empty($_POST['email']) && !empty($_POST['password'])){
     header('Location: ../index.php');
 }else{
     include_once('../login.php');
+    echo 'Veuillez remplir tous les champs';
 }
