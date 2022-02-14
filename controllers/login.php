@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @Autor josh-Muleshi <jmuleshi2@gmail.com>
+ * initialisation de la session
+ */
+
 session_start();
 require 'functions.php';
 
