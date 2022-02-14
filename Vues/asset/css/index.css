@@ -1,0 +1,48 @@
+body {
+    position: relative;
+    height: 100vh;
+    background: #190a2b;
+    color: azure;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui;
+}
+
+#container p {
+    width: 330px;
+}
+
+.data {
+    font-weight: bolder;
+    font-style: italic;
+    padding-left: 10px;
+    color: mediumaquamarine;
+}
+
+.info {
+    display: inline-block;
+    width: 123px;
+}
+
+.desconnect {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #190a2b;
+    text-decoration: none;
+    background: red;
+    padding: 13px;
+    font-size: 25px;
+    border-radius: 11px;
+    font-weight: bold;
+}
+
+.desconnect:hover {
+    background: #c40606;
+    color: aliceblue;
+}

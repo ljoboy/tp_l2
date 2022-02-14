@@ -1,0 +1,6 @@
+.error {
+    color: red;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0;
+}
