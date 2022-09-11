@@ -82,19 +82,18 @@ function print_prevous_value(string $input_name) : void {
 //Cette fonction écrit l'erreur lorsqu'un champ n'a pas été rempli.
 
 function msg_empty_data(string $input_name) : string {
-    return match ($input_name) {
-        'nom' => "<span class='error'>Veuillez saisir votre nom</span><br>",
-        'postnom' => "<span class='error'>Veuillez saisir votre post-nom</span><br>",
-        'prenom' => "<span class='error'>Veuillez saisir votre prenom</span><br>",
-        'email' => "<span class='error'>Veuillez saisir votre Adresse mail</span><br>",
-        'phone' => "<span class='error'>Veuillez saisir votre numéro de téléphone</span><br>",
-        'matricule' => "<span class='error'>Veuillez entrer votre matricule</span><br>",
-        'genre' => "<span class='error'>Veuillez spécifiez votre sexe</span><br>",
-        'password' => "<span class='error'>Veuillez saisir le mot de passe</span><br>",
-        'password2' => "<span class='error'>Veuillez saisir le mot de passe</span><br>",
-        'adresse' => "<span class='error'>Veuillez Entrez votre adresse</span><br>",
-        default => '',
-    };
+    return map($input_name, [
+		'nom' => 'Le nom est obligatoire',
+		'postnom' => 'Le postnom est obligatoire',
+		'prenom' => 'Le prenom est obligatoire',
+		'genre' => 'Le genre est obligatoire',
+		'matricule' => 'Le matricule est obligatoire',
+		'email' => 'L\'email est obligatoire',
+		'phone' => 'Le numéro de téléphone est obligatoire',
+		'password' => 'Le mot de passe est obligatoire',
+		'password2' => 'La confirmation du mot de passe est obligatoire',
+		'adresse' => 'L\'adresse est obligatoire'
+	]);
 }
 
 //student_already_registered vérifie si l'email entré est déjà enregistré avec un autre étudiant
